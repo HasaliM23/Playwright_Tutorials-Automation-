@@ -20,7 +20,7 @@ test('Locators',async ({page}) =>{
 
    //await page.type('#loginusername', 'Maxdemo1')
 
-   //provide password -css
+   //provide password -CSS
 
    await page.fill("input[id='loginpassword']" , 'test123')
 

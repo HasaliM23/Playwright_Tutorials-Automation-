@@ -39,6 +39,46 @@ test('Handel the Table',async({page})=>{
 
   //print all product details using loop
 
+  /*for(let i=0; i<await rows.count(); i++)
+  {
+    const row = rows.nth(i);
+    const tds = row.locator('td')
+
+    for(let j=0; j<await tds.count()-1; j++)
+
+        {
+            console.log(await tds.nth(j).textContent())
+        }
+  } */
+
+        //read data from all the rows and columns
+
+        const pages = await page.locator('.pagination li a')
+        console.log("Total number of pages:",await pages.count())
+
+        for(let p=0; p<await pages.count(); p++)
+        {
+            if(p>0)
+                {
+                    await pages.nth(p).click();
+                }
+
+                for(let i=0; i<await rows.count(); i++)
+  {
+    const row = rows.nth(i);
+    const tds = row.locator('td')
+
+    for(let j=0; j<await tds.count()-1; j++)
+
+        {
+            console.log(await tds.nth(j).textContent())
+        }
+  }
+                
+            
+        }
+
+
   
 
 
@@ -50,12 +90,12 @@ test('Handel the Table',async({page})=>{
 
 })
 
-async function selectProduct (rows,page,name){
+/*async function selectProduct (rows,page,name){
 
     const matchRow = rows.filter({
 
         has: page.locator('td'),
         hasText:name
     })
-   await matchRow.locator('input').check()
-}
+   await matchRow.locator('input').check() 
+}*/

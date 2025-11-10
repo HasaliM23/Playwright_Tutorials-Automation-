@@ -24,6 +24,17 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
+
+  //Multiple Report Creation
+
+  //reporter:['html],
+   //           ['list'],
+    //           ['line'],
+    //           ['dot'],
+    //           ['json',{  outputFile:'test-results.json'}],
+    //           ['junit',{  outputFile:'junit-results.xml'}],
+
+
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
@@ -34,6 +45,8 @@ export default defineConfig({
     //screenshot:'on',
     //video:'on'
   },
+
+  //timeout:1000,
 
   /* Configure projects for major browsers */
   projects: [
